@@ -382,8 +382,8 @@ public final class ERDesignerComponent implements ResourceHelperProvider {
 
         //Close Model
         DefaultAction CloseAction = new DefaultAction(
-                e -> worldConnector.exitApplication(), this, ERDesignerBundle.CLOSEMODEL);
-
+                e -> commandClose(), this, ERDesignerBundle.CLOSEMODEL);
+        
         handAction = new DefaultAction(
                 e -> {
                     commandSetTool(ToolEnum.HAND);
@@ -512,8 +512,8 @@ public final class ERDesignerComponent implements ResourceHelperProvider {
         theFileMenu.add(new DefaultMenuItem(theLoadAction));
 
         //Close Model
-        CloseMenu = new DefaultMenu(CloseAction);
-        theFileMenu.add(CloseMenu);
+        //CloseMenu = new DefaultMenuItem(CloseAction);
+        theFileMenu.add(new DefaultMenuItem(CloseAction));
 
         if (worldConnector.supportsRepositories()) {
             theFileMenu.addSeparator();
@@ -962,6 +962,19 @@ public final class ERDesignerComponent implements ResourceHelperProvider {
                 ERDesignerBundle.NEWMODELCREATED));
     }
 
+    //untuk menutup model saat ini
+    protected void commandClose() {
+        SaveToFileCommand savemodeltofile = new SaveToFileCommand();
+        savemodeltofile.execute();
+        
+        Model theModel = worldConnector.createNewModel();
+        setModel(theModel);
+
+        setupViewForNothing();
+
+        worldConnector.setStatusText(getResourceHelper().getText(
+                ERDesignerBundle.CLOSEMODEL));
+    }
     /**
      * Setup the view for a model loaded from repository.
      *

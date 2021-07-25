@@ -43,8 +43,8 @@
             <Icon>/de/erdesignerng/icons/folder.png</Icon>
         </Entry>
         <Entry id="CLOSEMODEL">
-            <Text lang="de">Modell schließen</Text>
-            <Text lang="en">Close model</Text>
+            <Text lang="de">Modell mit automatischer Speicherung schließen</Text>
+            <Text lang="en">Close Auto-save model</Text>
             <Icon>/de/erdesignerng/icons/close.png</Icon>
         </Entry>
         <Entry id="EXITPROGRAM">

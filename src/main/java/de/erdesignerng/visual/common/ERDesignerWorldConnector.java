@@ -35,6 +35,8 @@ public interface ERDesignerWorldConnector {
 
 	DefaultToolbar getToolBar();
 
+	//boolean supportsCloseModel();
+	
 	boolean supportsExitApplication();
 
 	boolean supportsClasspathEditor();
@@ -52,6 +54,8 @@ public interface ERDesignerWorldConnector {
 	Model createNewModel();
 
 	void initializeLoadedModel(Model aModel);
+
+	//void closeModel();
 
 	void notifyAboutException(Exception aException);
 
