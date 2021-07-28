@@ -381,8 +381,8 @@ public final class ERDesignerComponent implements ResourceHelperProvider {
                 new OpenFromFileCommand(), this, ERDesignerBundle.LOADMODEL);
 
         //Close Model
-        DefaultAction CloseAction = new DefaultAction(
-                e -> commandClose(), this, ERDesignerBundle.CLOSEMODEL);
+        DefaultAction theCloseAction = new DefaultAction(
+            e -> commandClose(), this, ERDesignerBundle.CLOSEMODEL);
         
         handAction = new DefaultAction(
                 e -> {
@@ -513,7 +513,7 @@ public final class ERDesignerComponent implements ResourceHelperProvider {
 
         //Close Model
         //CloseMenu = new DefaultMenuItem(CloseAction);
-        theFileMenu.add(new DefaultMenuItem(CloseAction));
+        theFileMenu.add(new DefaultMenuItem(theCloseAction));
 
         if (worldConnector.supportsRepositories()) {
             theFileMenu.addSeparator();

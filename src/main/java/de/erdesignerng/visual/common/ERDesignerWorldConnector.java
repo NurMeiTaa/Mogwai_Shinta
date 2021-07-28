@@ -34,8 +34,6 @@ public interface ERDesignerWorldConnector {
 	void setStatusText(String theMessage);
 
 	DefaultToolbar getToolBar();
-
-	//boolean supportsCloseModel();
 	
 	boolean supportsExitApplication();
 
@@ -54,8 +52,6 @@ public interface ERDesignerWorldConnector {
 	Model createNewModel();
 
 	void initializeLoadedModel(Model aModel);
-
-	//void closeModel();
 
 	void notifyAboutException(Exception aException);
 
